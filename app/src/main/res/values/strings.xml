@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MediaPlayerSample</string>
+    <string name="message_no_music_found">"message not found "</string>
+    <string name="toast_shuffle_on">shuffle on</string>
+    <string name="toast_shuffle_off">shuffle off</string>
+    <string name="denied_permission_messsage">permission denied</string>
+    <string name="request_permission_button">permit</string>
+    <string name="request_permission_message">permission</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playback_speed_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/playback_speed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        android:text="Playback speed"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/playback_speed_slow"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/playback_speed_title"
+        android:layout_alignStart="@+id/playback_speed_seekbar"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/playback_speed_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playback_speed_slow"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:textSize="18sp"
+        tools:text="1.00x" />
+
+    <ImageView
+        android:id="@+id/playback_speed_fast"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/playback_speed_title"
+        android:layout_alignEnd="@+id/playback_speed_seekbar"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <SeekBar
+        android:id="@+id/playback_speed_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playback_speed_slow"
+        android:layout_marginBottom="8dp"
+        android:padding="16dp" />
+
+</RelativeLayout>
