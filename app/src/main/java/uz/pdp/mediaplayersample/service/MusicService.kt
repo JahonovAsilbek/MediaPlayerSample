@@ -95,7 +95,7 @@ class MusicService : MediaBrowserServiceCompat(), MusicPlayerCompletionListener 
             it.setCallback(MySessionCallback(applicationContext))
             sessionToken = it.sessionToken
         }
-        listenForPhoneCalls()
+//        listenForPhoneCalls()
 
 
     }

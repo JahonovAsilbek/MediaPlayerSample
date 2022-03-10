@@ -1,6 +1,7 @@
 package uz.pdp.mediaplayersample.service
 
 import android.app.PendingIntent
+import android.app.TaskStackBuilder
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
@@ -104,7 +105,7 @@ class MusicWidget : AppWidgetProvider() {
             val intent = Intent(context, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             val pendIntentSongList =
-                PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+                PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
             remoteViews.setOnClickPendingIntent(R.id.viewFlipper, pendIntentSongList)
             return remoteViews
         }
@@ -112,7 +113,17 @@ class MusicWidget : AppWidgetProvider() {
         fun getPendingIntent(context: Context?, action: String?): PendingIntent {
             val intent = Intent(context, MusicWidget::class.java)
             intent.action = action
-            return PendingIntent.getBroadcast(context, 0, intent, 0)
+            return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+
+//            val intent = Intent(context, MusicWidget::class.java)
+//            val resultIntent: PendingIntent = TaskStackBuilder.create(context).run {
+//                addNextIntentWithParentStack(intent)
+//                getPendingIntent(
+//                    0,
+//                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+//                )
+//            }
+//            return resultIntent
         }
     }
 }

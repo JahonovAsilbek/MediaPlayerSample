@@ -55,8 +55,6 @@ class MainActivity : AppCompatActivity(), PlaybackSpeedListener {
 
         songClick()
 
-
-
         binding.rv.also {
             val dividerItemDecoration = DividerItemDecoration(it.context, LinearLayout.VERTICAL)
             it.addItemDecoration(dividerItemDecoration)
